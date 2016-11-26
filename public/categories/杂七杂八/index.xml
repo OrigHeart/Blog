@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Origheart</title>
-    <link>https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml</link>
+    <link>http://www.origheart.com/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml</link>
     <description>Recent content on Origheart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.origheart.com/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>iOS捕获app crash日志的Api</title>
-      <link>https://example.org/post/2015-04-12-ios-app-crash-log/</link>
+      <link>http://www.origheart.com/post/2015-04-12-ios-app-crash-log/</link>
       <pubDate>Sun, 12 Apr 2015 13:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-04-12-ios-app-crash-log/</guid>
+      <guid>http://www.origheart.com/post/2015-04-12-ios-app-crash-log/</guid>
       <description>&lt;p&gt;定义uncaughtExceptionHandler方法:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;void uncaughtExceptionHandler( NSException   *exception) 
@@ -42,10 +42,10 @@
     
     <item>
       <title>Hello world</title>
-      <link>https://example.org/post/2015-04-11-hello-world/</link>
+      <link>http://www.origheart.com/post/2015-04-11-hello-world/</link>
       <pubDate>Sat, 11 Apr 2015 13:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-04-11-hello-world/</guid>
+      <guid>http://www.origheart.com/post/2015-04-11-hello-world/</guid>
       <description>
 
 &lt;pre&gt;&lt;code&gt;print(&amp;quot;Hello world!&amp;quot;)

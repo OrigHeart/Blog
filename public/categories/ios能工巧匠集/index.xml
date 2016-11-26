@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Origheart</title>
-    <link>https://example.org/categories/ios%E8%83%BD%E5%B7%A5%E5%B7%A7%E5%8C%A0%E9%9B%86/index.xml</link>
+    <link>http://www.origheart.com/categories/ios%E8%83%BD%E5%B7%A5%E5%B7%A7%E5%8C%A0%E9%9B%86/index.xml</link>
     <description>Recent content on Origheart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://example.org/categories/ios%E8%83%BD%E5%B7%A5%E5%B7%A7%E5%8C%A0%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.origheart.com/categories/ios%E8%83%BD%E5%B7%A5%E5%B7%A7%E5%8C%A0%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>iOS常用小技巧（经常更新）</title>
-      <link>https://example.org/post/2015-05-10-ios-skills/</link>
+      <link>http://www.origheart.com/post/2015-05-10-ios-skills/</link>
       <pubDate>Sun, 10 May 2015 15:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-05-10-ios-skills/</guid>
+      <guid>http://www.origheart.com/post/2015-05-10-ios-skills/</guid>
       <description>
 
 &lt;h3 id=&#34;循环效果&#34;&gt;循环效果:&lt;/h3&gt;

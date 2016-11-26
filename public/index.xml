@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Origheart</title>
-    <link>https://example.org/index.xml</link>
+    <link>http://www.origheart.com/index.xml</link>
     <description>Recent content on Origheart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 10 May 2015 15:30:27 +0800</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.origheart.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>iOS常用小技巧（经常更新）</title>
-      <link>https://example.org/post/2015-05-10-ios-skills/</link>
+      <link>http://www.origheart.com/post/2015-05-10-ios-skills/</link>
       <pubDate>Sun, 10 May 2015 15:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-05-10-ios-skills/</guid>
+      <guid>http://www.origheart.com/post/2015-05-10-ios-skills/</guid>
       <description>
 
 &lt;h3 id=&#34;循环效果&#34;&gt;循环效果:&lt;/h3&gt;
@@ -126,10 +126,10 @@ self.count %= 4;
     
     <item>
       <title>iOS捕获app crash日志的Api</title>
-      <link>https://example.org/post/2015-04-12-ios-app-crash-log/</link>
+      <link>http://www.origheart.com/post/2015-04-12-ios-app-crash-log/</link>
       <pubDate>Sun, 12 Apr 2015 13:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-04-12-ios-app-crash-log/</guid>
+      <guid>http://www.origheart.com/post/2015-04-12-ios-app-crash-log/</guid>
       <description>&lt;p&gt;定义uncaughtExceptionHandler方法:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;void uncaughtExceptionHandler( NSException   *exception) 
@@ -158,10 +158,10 @@ self.count %= 4;
     
     <item>
       <title>那些一般人不会告诉你的提升做事效率的方法</title>
-      <link>https://example.org/post/2015-04-11-improve-efficiency/</link>
+      <link>http://www.origheart.com/post/2015-04-11-improve-efficiency/</link>
       <pubDate>Sat, 11 Apr 2015 15:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-04-11-improve-efficiency/</guid>
+      <guid>http://www.origheart.com/post/2015-04-11-improve-efficiency/</guid>
       <description>&lt;p&gt;工作以来，就喜欢琢磨一些提升自己做事效率的方法，积累了一段时间，也看了很多相关的书籍与文章后，感到有了很大的收获，分享给各位，希望对大家有所帮助。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;1、躺在床上的时候，不要玩手机。&lt;/strong&gt;大学的时候喜欢在床上玩手机，结果经常会不知不觉玩到很晚，第二天经常会因为睡眠不足而精力不足。现在，躺在床上的时候就把手机放在一旁，睡眠效率提升很多。&lt;/p&gt;
@@ -190,10 +190,10 @@ self.count %= 4;
     
     <item>
       <title>Hello world</title>
-      <link>https://example.org/post/2015-04-11-hello-world/</link>
+      <link>http://www.origheart.com/post/2015-04-11-hello-world/</link>
       <pubDate>Sat, 11 Apr 2015 13:30:27 +0800</pubDate>
       
-      <guid>https://example.org/post/2015-04-11-hello-world/</guid>
+      <guid>http://www.origheart.com/post/2015-04-11-hello-world/</guid>
       <description>
 
 &lt;pre&gt;&lt;code&gt;print(&amp;quot;Hello world!&amp;quot;)
