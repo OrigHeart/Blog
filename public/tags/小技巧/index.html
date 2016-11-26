@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 	<head>
-		<title>Ipsum &middot; Origheart</title>
+		<title>小技巧 &middot; Origheart</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Origheart">
@@ -16,8 +16,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		
 		<meta name="og:site_name" content="Origheart">
-		<meta name="og:title" content="Ipsum">
-		<meta name="og:url" content="https://example.org/categories/ipsum/">
+		<meta name="og:title" content="小技巧">
+		<meta name="og:url" content="https://example.org/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
 		<meta name="og:image" content="https://example.org/images/avatar.jpg">
 		
 
@@ -29,8 +29,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
 
 		
-		<link href="https://example.org/categories/ipsum/index.xml" rel="alternate" type="application/rss+xml" title="Origheart" />
-		<link href="https://example.org/categories/ipsum/index.xml" rel="feed" type="application/rss+xml" title="Origheart" />
+		<link href="https://example.org/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/index.xml" rel="alternate" type="application/rss+xml" title="Origheart" />
+		<link href="https://example.org/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/index.xml" rel="feed" type="application/rss+xml" title="Origheart" />
 		
 		
 	</head>
@@ -64,18 +64,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     
         <span>
     <h1>
-        <a href="https://example.org/post/go-is-for-lovers/">Go is for lovers</a>
+        <a href="https://example.org/post/2015-05-10-ios-skills/">iOS常用小技巧（经常更新）</a>
     </h1>
 
     <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2015-09-17 13:47:08 &#43;0200 &#43;0200">2015-09-17</time>&nbsp;&nbsp;
+<time datetime="2015-05-10 15:30:27 &#43;0800 CST">2015-05-10</time>&nbsp;&nbsp;
 
 
     
     
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         
-        <a class="article-category-link" href="https://example.org/categories/ipsum">Ipsum</a>
+        <a class="article-category-link" href="https://example.org/categories/ios%e8%83%bd%e5%b7%a5%e5%b7%a7%e5%8c%a0%e9%9b%86">iOS能工巧匠集</a>
         
         
     
@@ -84,12 +84,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
    
    
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+       <a class="article-category-link" href="https://example.org/tags/%e5%b0%8f%e6%8a%80%e5%b7%a7">小技巧</a>
+       
+       
+   
 
 
 </span>
 
-<p>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</p>
+<p>循环效果: self.count++; self.count %= 4;  可以实现0～4的循环效果，替换了
+if(self.count==4) self.count = 0;  计算动画当前移动的值：（相似三角形） 开始值 + 当前帧数 * (结束值 - 开始值) / (帧频 * 动画时长)
+iOS7下不让view渗透到NavigationBar或TabBar的下面： if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) { self.edgesForExtendedLayout = UIRectEdgeNone; }  自定义控件  创建一个继承UIView的一个类 创建一个空的Xib名称根类名称一样 往xib里面拖一个UIView把UIView的Class修改为自定义的类型 往这个View里面拖进各种控件 把里面的控件根代码进行关联 在用到的地方用[NSBundle mainBundle]来加载控件 切记不要用initWithFrame的方法来加载  TRHeaderView *hv = [[[NSBundle mainBundle]loadNibNamed:@&quot;TRHeaderView&quot; owner:self options:Nil]lastObject]; hv.wb = wb; self.tableView.tableHeaderView = hv;  在scrollView里面整齐的放入表情，类似于QQ的表情放置方法： - (void)viewDidLoad { [super viewDidLoad]; self.faces = [NSArray arrayWithContentsOfFile:@&quot;/Users/liukang/Main/Origheart/face/emoticons.plist&quot;]; for (int i=0; i&lt;self.</p>
 <hr>
 
     
@@ -117,7 +124,7 @@ This document is a brief primer on using go templates.</p>
 		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 		
 		
-		<li><a href="https://example.org/categories/ipsum/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://example.org/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 

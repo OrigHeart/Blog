@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Origheart</title>
+    <link>https://example.org/categories/ios%E8%83%BD%E5%B7%A5%E5%B7%A7%E5%8C%A0%E9%9B%86/index.xml</link>
+    <description>Recent content on Origheart</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/categories/ios%E8%83%BD%E5%B7%A5%E5%B7%A7%E5%8C%A0%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iOS常用小技巧（经常更新）</title>
+      <link>https://example.org/post/2015-05-10-ios-skills/</link>
+      <pubDate>Sun, 10 May 2015 15:30:27 +0800</pubDate>
+      
+      <guid>https://example.org/post/2015-05-10-ios-skills/</guid>
+      <description>
+
+&lt;h3 id=&#34;循环效果&#34;&gt;循环效果:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;self.count++;
+self.count %= 4;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以实现0～4的循环效果，替换了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;if(self.count==4) self.count = 0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;计算动画当前移动的值-相似三角形&#34;&gt;计算动画当前移动的值：（相似三角形）&lt;/h3&gt;
+
+&lt;p&gt;开始值 + 当前帧数 * (结束值 - 开始值) / (帧频 * 动画时长)&lt;/p&gt;
+
+&lt;h3 id=&#34;ios7下不让view渗透到navigationbar或tabbar的下面&#34;&gt;iOS7下不让view渗透到NavigationBar或TabBar的下面：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;自定义控件&#34;&gt;自定义控件&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建一个继承UIView的一个类&lt;/li&gt;
+&lt;li&gt;创建一个空的Xib名称根类名称一样&lt;/li&gt;
+&lt;li&gt;往xib里面拖一个UIView把UIView的Class修改为自定义的类型&lt;/li&gt;
+&lt;li&gt;往这个View里面拖进各种控件&lt;/li&gt;
+&lt;li&gt;把里面的控件根代码进行关联&lt;/li&gt;
+&lt;li&gt;在用到的地方用[NSBundle mainBundle]来加载控件 切记不要用initWithFrame的方法来加载&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;TRHeaderView *hv = [[[NSBundle mainBundle]loadNibNamed:@&amp;quot;TRHeaderView&amp;quot; owner:self options:Nil]lastObject];
+    hv.wb = wb;
+    self.tableView.tableHeaderView = hv;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;在scrollview里面整齐的放入表情-类似于qq的表情放置方法&#34;&gt;在scrollView里面整齐的放入表情，类似于QQ的表情放置方法：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;- (void)viewDidLoad
+{
+    [super viewDidLoad];
+ 
+    self.faces = [NSArray arrayWithContentsOfFile:@&amp;quot;/Users/liukang/Main/Origheart/face/emoticons.plist&amp;quot;];
+    
+    for (int i=0; i&amp;lt;self.faces.count; i++) {
+        NSDictionary *faceDic = self.faces[i];
+        NSString *imageName = [faceDic objectForKey:@&amp;quot;png&amp;quot;];
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i%8*40, i/8*40, 40, 40)];
+        btn.tag = i;
+        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.mySV addSubview:btn];
+        int row = self.faces.count%8==0?self.faces.count/8 :self.faces.count/8+1;
+        [self.mySV setContentSize:CGSizeMake(0, row*40)];
+    }
+}
+-(void)clicked:(UIButton *)btn{
+    NSDictionary *faceDic = self.faces[btn.tag];
+    NSString *text = [faceDic objectForKey:@&amp;quot;chs&amp;quot;];
+    
+    self.myTF.text = [self.myTF.text stringByAppendingString:text];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;用storyboard-当启动次数-记录在userdefaults中-是偶数的时候将根视图控制器设置为其他vc&#34;&gt;用storyboard，当启动次数(记录在Userdefaults中)是偶数的时候将根视图控制器设置为其他VC&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    int runTimes = [ud integerForKey:@&amp;quot;runTimes&amp;quot;];
+    
+    if (runTimes%2==0) {
+        UIViewController *vc = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@&amp;quot;greenvc&amp;quot;];
+        
+        self.window.rootViewController = vc;
+
+    }
+    [ud setInteger:++runTimes forKey:@&amp;quot;runTimes&amp;quot;];
+    [ud synchronize];
+    return YES;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;present多个view-controller后-回到第一个view-controller的方法&#34;&gt;present多个view controller后，回到第一个view controller的方法：&lt;/h3&gt;
+
+&lt;p&gt;present: A-&amp;gt;B-&amp;gt;C dismiss:C-&amp;gt;A,不显示出B：
+在B的viewDidLoad里面加入收听通知，实现响应方法，并在适当的地方移除收听：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back:) name:@&amp;quot;TestComplete&amp;quot; object:nil];
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在C dismiss的时候发送通知：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;[[NSNotificationCenter defaultCenter] postNotificationName:@&amp;quot;TestComplete&amp;quot; object:nil];
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

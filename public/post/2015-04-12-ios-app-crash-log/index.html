@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 	<head>
-		<title>Ipsum &middot; Origheart</title>
+		<title>iOS捕获app crash日志的Api &middot; Origheart</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Origheart">
@@ -16,8 +16,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		
 		<meta name="og:site_name" content="Origheart">
-		<meta name="og:title" content="Ipsum">
-		<meta name="og:url" content="https://example.org/categories/ipsum/">
+		<meta name="og:title" content="iOS捕获app crash日志的Api">
+		<meta name="og:url" content="https://example.org/post/2015-04-12-ios-app-crash-log/">
 		<meta name="og:image" content="https://example.org/images/avatar.jpg">
 		
 
@@ -28,9 +28,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<link rel="stylesheet" href="https://example.org/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
 
-		
-		<link href="https://example.org/categories/ipsum/index.xml" rel="alternate" type="application/rss+xml" title="Origheart" />
-		<link href="https://example.org/categories/ipsum/index.xml" rel="feed" type="application/rss+xml" title="Origheart" />
 		
 		
 	</head>
@@ -60,22 +57,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Main -->
 		<div id="main">
 			
-    
-    
-        <span>
-    <h1>
-        <a href="https://example.org/post/go-is-for-lovers/">Go is for lovers</a>
-    </h1>
+	<span>
+		<h1>iOS捕获app crash日志的Api</h1>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2015-09-17 13:47:08 &#43;0200 &#43;0200">2015-09-17</time>&nbsp;&nbsp;
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2015-04-12 13:30:27 &#43;0800 CST">2015-04-12</time>&nbsp;&nbsp;
 
 
     
     
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         
-        <a class="article-category-link" href="https://example.org/categories/ipsum">Ipsum</a>
+        <a class="article-category-link" href="https://example.org/categories/%e6%9d%82%e4%b8%83%e6%9d%82%e5%85%ab">杂七杂八</a>
         
         
     
@@ -86,16 +79,50 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
    
 
 
-</span>
+	</span>
 
-<p>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</p>
-<hr>
+	<p>
+	    <p>定义uncaughtExceptionHandler方法:</p>
 
-    
+<pre><code class="language-java">void uncaughtExceptionHandler( NSException   *exception) 
+{
+    // 异常的堆栈信息
+    NSArray *stackArray = [exception callStackSymbols];
+    // 出现异常的原因
+    NSString *reason = [exception reason];
+    // 异常名称
+    NSString *name = [exception name];
+    NSString *exceptionInfo = [NSString stringWithFormat:@&quot;Exception reason：%@\nException name：%@\nException stack：%@&quot;,name, reason, stackArray];
+    NSLog(@&quot;%@&quot;, exceptionInfo);
+}
+</code></pre>
 
-    
+<p>调用方法的时机:</p>
 
+<pre><code class="language-java">- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+{
+   // 设置处理异常的Handler
+    NSSetUncaughtExceptionHandler(&amp;uncaughtExceptionHandler);
+}
+</code></pre>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/2015-04-12-ios-app-crash-log\/';
+    var disqus_title = 'iOS捕获app crash日志的Api';
+    var disqus_url = 'https:\/\/example.org\/post\/2015-04-12-ios-app-crash-log\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 		</div>
 
@@ -117,7 +144,7 @@ This document is a brief primer on using go templates.</p>
 		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 		
 		
-		<li><a href="https://example.org/categories/ipsum/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 

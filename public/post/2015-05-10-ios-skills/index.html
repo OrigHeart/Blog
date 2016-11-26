@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>iOS常用小技巧（经常更新） &middot; Origheart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Origheart">
+		<meta name="description" content="个人博客，分享美好的事物和技术">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Origheart">
+		<meta name="og:title" content="iOS常用小技巧（经常更新）">
+		<meta name="og:url" content="https://example.org/post/2015-05-10-ios-skills/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.17" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>I&rsquo;m Origheart</strong><br>一位iOS开发者，喜欢Swift，正在学习Python。现就职于<a href="//51offer.com">51offer</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>iOS常用小技巧（经常更新）</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2015-05-10 15:30:27 &#43;0800 CST">2015-05-10</time>&nbsp;&nbsp;
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://example.org/categories/ios%e8%83%bd%e5%b7%a5%e5%b7%a7%e5%8c%a0%e9%9b%86">iOS能工巧匠集</a>
+        
+        
+    
+
+
+
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+       <a class="article-category-link" href="https://example.org/tags/%e5%b0%8f%e6%8a%80%e5%b7%a7">小技巧</a>
+       
+       
+   
+
+
+	</span>
+
+	<p>
+	    
+
+<h3 id="循环效果">循环效果:</h3>
+
+<pre><code class="language-java">self.count++;
+self.count %= 4;
+</code></pre>
+
+<p>可以实现0～4的循环效果，替换了</p>
+
+<pre><code class="language-java">if(self.count==4) self.count = 0;
+</code></pre>
+
+<h3 id="计算动画当前移动的值-相似三角形">计算动画当前移动的值：（相似三角形）</h3>
+
+<p>开始值 + 当前帧数 * (结束值 - 开始值) / (帧频 * 动画时长)</p>
+
+<h3 id="ios7下不让view渗透到navigationbar或tabbar的下面">iOS7下不让view渗透到NavigationBar或TabBar的下面：</h3>
+
+<pre><code class="language-java">if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+</code></pre>
+
+<h3 id="自定义控件">自定义控件</h3>
+
+<ul>
+<li>创建一个继承UIView的一个类</li>
+<li>创建一个空的Xib名称根类名称一样</li>
+<li>往xib里面拖一个UIView把UIView的Class修改为自定义的类型</li>
+<li>往这个View里面拖进各种控件</li>
+<li>把里面的控件根代码进行关联</li>
+<li>在用到的地方用[NSBundle mainBundle]来加载控件 切记不要用initWithFrame的方法来加载</li>
+</ul>
+
+<pre><code class="language-java">TRHeaderView *hv = [[[NSBundle mainBundle]loadNibNamed:@&quot;TRHeaderView&quot; owner:self options:Nil]lastObject];
+    hv.wb = wb;
+    self.tableView.tableHeaderView = hv;
+</code></pre>
+
+<h3 id="在scrollview里面整齐的放入表情-类似于qq的表情放置方法">在scrollView里面整齐的放入表情，类似于QQ的表情放置方法：</h3>
+
+<pre><code class="language-java">- (void)viewDidLoad
+{
+    [super viewDidLoad];
+ 
+    self.faces = [NSArray arrayWithContentsOfFile:@&quot;/Users/liukang/Main/Origheart/face/emoticons.plist&quot;];
+    
+    for (int i=0; i&lt;self.faces.count; i++) {
+        NSDictionary *faceDic = self.faces[i];
+        NSString *imageName = [faceDic objectForKey:@&quot;png&quot;];
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i%8*40, i/8*40, 40, 40)];
+        btn.tag = i;
+        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.mySV addSubview:btn];
+        int row = self.faces.count%8==0?self.faces.count/8 :self.faces.count/8+1;
+        [self.mySV setContentSize:CGSizeMake(0, row*40)];
+    }
+}
+-(void)clicked:(UIButton *)btn{
+    NSDictionary *faceDic = self.faces[btn.tag];
+    NSString *text = [faceDic objectForKey:@&quot;chs&quot;];
+    
+    self.myTF.text = [self.myTF.text stringByAppendingString:text];
+}
+</code></pre>
+
+<h3 id="用storyboard-当启动次数-记录在userdefaults中-是偶数的时候将根视图控制器设置为其他vc">用storyboard，当启动次数(记录在Userdefaults中)是偶数的时候将根视图控制器设置为其他VC</h3>
+
+<pre><code class="language-java">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    int runTimes = [ud integerForKey:@&quot;runTimes&quot;];
+    
+    if (runTimes%2==0) {
+        UIViewController *vc = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@&quot;greenvc&quot;];
+        
+        self.window.rootViewController = vc;
+
+    }
+    [ud setInteger:++runTimes forKey:@&quot;runTimes&quot;];
+    [ud synchronize];
+    return YES;
+}
+</code></pre>
+
+<h3 id="present多个view-controller后-回到第一个view-controller的方法">present多个view controller后，回到第一个view controller的方法：</h3>
+
+<p>present: A-&gt;B-&gt;C dismiss:C-&gt;A,不显示出B：
+在B的viewDidLoad里面加入收听通知，实现响应方法，并在适当的地方移除收听：</p>
+
+<pre><code class="language-java">[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(back:) name:@&quot;TestComplete&quot; object:nil];
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+</code></pre>
+
+<p>在C dismiss的时候发送通知：</p>
+
+<pre><code class="language-java">[[NSNotificationCenter defaultCenter] postNotificationName:@&quot;TestComplete&quot; object:nil];
+</code></pre>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/2015-05-10-ios-skills\/';
+    var disqus_title = 'iOS常用小技巧（经常更新）';
+    var disqus_url = 'https:\/\/example.org\/post\/2015-05-10-ios-skills\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/lk972105" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/origheart" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Origheart</li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

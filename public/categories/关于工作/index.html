@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 	<head>
-		<title>Posts &middot; Origheart</title>
+		<title>关于工作 &middot; Origheart</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Origheart">
@@ -16,8 +16,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		
 		<meta name="og:site_name" content="Origheart">
-		<meta name="og:title" content="Posts">
-		<meta name="og:url" content="https://example.org/post/">
+		<meta name="og:title" content="关于工作">
+		<meta name="og:url" content="https://example.org/categories/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C/">
 		<meta name="og:image" content="https://example.org/images/avatar.jpg">
 		
 
@@ -29,8 +29,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
 
 		
-		<link href="https://example.org/post/index.xml" rel="alternate" type="application/rss+xml" title="Origheart" />
-		<link href="https://example.org/post/index.xml" rel="feed" type="application/rss+xml" title="Origheart" />
+		<link href="https://example.org/categories/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C/index.xml" rel="alternate" type="application/rss+xml" title="Origheart" />
+		<link href="https://example.org/categories/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C/index.xml" rel="feed" type="application/rss+xml" title="Origheart" />
 		
 		
 	</head>
@@ -61,76 +61,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<div id="main">
 			
     
-    
-        <span>
-    <h1>
-        <a href="https://example.org/post/2015-05-10-ios-skills/">iOS常用小技巧（经常更新）</a>
-    </h1>
-
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2015-05-10 15:30:27 &#43;0800 CST">2015-05-10</time>&nbsp;&nbsp;
-
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="https://example.org/categories/ios%e8%83%bd%e5%b7%a5%e5%b7%a7%e5%8c%a0%e9%9b%86">iOS能工巧匠集</a>
-        
-        
-    
-
-
-
-   
-   
-       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
-       
-       <a class="article-category-link" href="https://example.org/tags/%e5%b0%8f%e6%8a%80%e5%b7%a7">小技巧</a>
-       
-       
-   
-
-
-</span>
-
-<p>循环效果: self.count++; self.count %= 4;  可以实现0～4的循环效果，替换了
-if(self.count==4) self.count = 0;  计算动画当前移动的值：（相似三角形） 开始值 + 当前帧数 * (结束值 - 开始值) / (帧频 * 动画时长)
-iOS7下不让view渗透到NavigationBar或TabBar的下面： if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) { self.edgesForExtendedLayout = UIRectEdgeNone; }  自定义控件  创建一个继承UIView的一个类 创建一个空的Xib名称根类名称一样 往xib里面拖一个UIView把UIView的Class修改为自定义的类型 往这个View里面拖进各种控件 把里面的控件根代码进行关联 在用到的地方用[NSBundle mainBundle]来加载控件 切记不要用initWithFrame的方法来加载  TRHeaderView *hv = [[[NSBundle mainBundle]loadNibNamed:@&quot;TRHeaderView&quot; owner:self options:Nil]lastObject]; hv.wb = wb; self.tableView.tableHeaderView = hv;  在scrollView里面整齐的放入表情，类似于QQ的表情放置方法： - (void)viewDidLoad { [super viewDidLoad]; self.faces = [NSArray arrayWithContentsOfFile:@&quot;/Users/liukang/Main/Origheart/face/emoticons.plist&quot;]; for (int i=0; i&lt;self.</p>
-<hr>
-
-    
-        <span>
-    <h1>
-        <a href="https://example.org/post/2015-04-12-ios-app-crash-log/">iOS捕获app crash日志的Api</a>
-    </h1>
-
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2015-04-12 13:30:27 &#43;0800 CST">2015-04-12</time>&nbsp;&nbsp;
-
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="https://example.org/categories/%e6%9d%82%e4%b8%83%e6%9d%82%e5%85%ab">杂七杂八</a>
-        
-        
-    
-
-
-
-   
-   
-
-
-</span>
-
-<p>定义uncaughtExceptionHandler方法:
-void uncaughtExceptionHandler( NSException *exception) { // 异常的堆栈信息 NSArray *stackArray = [exception callStackSymbols]; // 出现异常的原因 NSString *reason = [exception reason]; // 异常名称 NSString *name = [exception name]; NSString *exceptionInfo = [NSString stringWithFormat:@&quot;Exception reason：%@\nException name：%@\nException stack：%@&quot;,name, reason, stackArray]; NSLog(@&quot;%@&quot;, exceptionInfo); }  调用方法的时机:
-- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions { // 设置处理异常的Handler NSSetUncaughtExceptionHandler(&amp;uncaughtExceptionHandler); }  </p>
-<hr>
-
     
         <span>
     <h1>
@@ -173,43 +103,6 @@ void uncaughtExceptionHandler( NSException *exception) { // 异常的堆栈信�
 <hr>
 
     
-        <span>
-    <h1>
-        <a href="https://example.org/post/2015-04-11-hello-world/">Hello world</a>
-    </h1>
-
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2015-04-11 13:30:27 &#43;0800 CST">2015-04-11</time>&nbsp;&nbsp;
-
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="https://example.org/categories/%e6%9d%82%e4%b8%83%e6%9d%82%e5%85%ab">杂七杂八</a>
-        
-        
-    
-
-
-
-   
-   
-
-
-</span>
-
-<p> print(&quot;Hello world!&quot;)   前前后后折腾了2天时间，终于把自己的blog建起来了。此站点是通过Hugo创建的。从创建到购买域名，到部署，到上线。其中有一些曲折的过程，最开始不知道如何着手，我去学习Python，通过哪种方式创建了一个简易的博客，但是并不美观，最终还是选择了Hugo。
-博客还有很多不完整以及很多细节不够好的地方，以后我会慢慢调整慢慢学习。
- 我将在这里做什么   分享自己的一些编程经验，并与大家交流
- 无聊时在这儿打发时间，记录自己生活中的那些开心与不开心的事儿
- 介绍自己做过的一些项目
- 收集iOS开发的技术文摘
- 记录自己的学习和成长过程
-   </p>
-<hr>
-
-    
 
     
 
@@ -234,7 +127,7 @@ void uncaughtExceptionHandler( NSException *exception) { // 异常的堆栈信�
 		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 		
 		
-		<li><a href="https://example.org/post/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://example.org/categories/%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>杂七杂八 &middot; Origheart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Origheart">
+		<meta name="description" content="个人博客，分享美好的事物和技术">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Origheart">
+		<meta name="og:title" content="杂七杂八">
+		<meta name="og:url" content="https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.17" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		<link href="https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="alternate" type="application/rss+xml" title="Origheart" />
+		<link href="https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="feed" type="application/rss+xml" title="Origheart" />
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>I&rsquo;m Origheart</strong><br>一位iOS开发者，喜欢Swift，正在学习Python。现就职于<a href="//51offer.com">51offer</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+    
+    
+        <span>
+    <h1>
+        <a href="https://example.org/post/2015-04-12-ios-app-crash-log/">iOS捕获app crash日志的Api</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2015-04-12 13:30:27 &#43;0800 CST">2015-04-12</time>&nbsp;&nbsp;
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://example.org/categories/%e6%9d%82%e4%b8%83%e6%9d%82%e5%85%ab">杂七杂八</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+</span>
+
+<p>定义uncaughtExceptionHandler方法:
+void uncaughtExceptionHandler( NSException *exception) { // 异常的堆栈信息 NSArray *stackArray = [exception callStackSymbols]; // 出现异常的原因 NSString *reason = [exception reason]; // 异常名称 NSString *name = [exception name]; NSString *exceptionInfo = [NSString stringWithFormat:@&quot;Exception reason：%@\nException name：%@\nException stack：%@&quot;,name, reason, stackArray]; NSLog(@&quot;%@&quot;, exceptionInfo); }  调用方法的时机:
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions { // 设置处理异常的Handler NSSetUncaughtExceptionHandler(&amp;uncaughtExceptionHandler); }  </p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://example.org/post/2015-04-11-hello-world/">Hello world</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2015-04-11 13:30:27 &#43;0800 CST">2015-04-11</time>&nbsp;&nbsp;
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://example.org/categories/%e6%9d%82%e4%b8%83%e6%9d%82%e5%85%ab">杂七杂八</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+</span>
+
+<p> print(&quot;Hello world!&quot;)   前前后后折腾了2天时间，终于把自己的blog建起来了。此站点是通过Hugo创建的。从创建到购买域名，到部署，到上线。其中有一些曲折的过程，最开始不知道如何着手，我去学习Python，通过哪种方式创建了一个简易的博客，但是并不美观，最终还是选择了Hugo。
+博客还有很多不完整以及很多细节不够好的地方，以后我会慢慢调整慢慢学习。
+ 我将在这里做什么   分享自己的一些编程经验，并与大家交流
+ 无聊时在这儿打发时间，记录自己生活中的那些开心与不开心的事儿
+ 介绍自己做过的一些项目
+ 收集iOS开发的技术文摘
+ 记录自己的学习和成长过程
+   </p>
+<hr>
+
+    
+
+    
+
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/lk972105" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/origheart" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Origheart</li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

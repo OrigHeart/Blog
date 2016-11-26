@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Origheart</title>
+    <link>https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml</link>
+    <description>Recent content on Origheart</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iOS捕获app crash日志的Api</title>
+      <link>https://example.org/post/2015-04-12-ios-app-crash-log/</link>
+      <pubDate>Sun, 12 Apr 2015 13:30:27 +0800</pubDate>
+      
+      <guid>https://example.org/post/2015-04-12-ios-app-crash-log/</guid>
+      <description>&lt;p&gt;定义uncaughtExceptionHandler方法:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;void uncaughtExceptionHandler( NSException   *exception) 
+{
+    // 异常的堆栈信息
+    NSArray *stackArray = [exception callStackSymbols];
+    // 出现异常的原因
+    NSString *reason = [exception reason];
+    // 异常名称
+    NSString *name = [exception name];
+    NSString *exceptionInfo = [NSString stringWithFormat:@&amp;quot;Exception reason：%@\nException name：%@\nException stack：%@&amp;quot;,name, reason, stackArray];
+    NSLog(@&amp;quot;%@&amp;quot;, exceptionInfo);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;调用方法的时机:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+{
+   // 设置处理异常的Handler
+    NSSetUncaughtExceptionHandler(&amp;amp;uncaughtExceptionHandler);
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello world</title>
+      <link>https://example.org/post/2015-04-11-hello-world/</link>
+      <pubDate>Sat, 11 Apr 2015 13:30:27 +0800</pubDate>
+      
+      <guid>https://example.org/post/2015-04-11-hello-world/</guid>
+      <description>
+
+&lt;pre&gt;&lt;code&gt;print(&amp;quot;Hello world!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;前前后后折腾了2天时间，终于把自己的blog建起来了。此站点是通过&lt;code&gt;Hugo&lt;/code&gt;创建的。从创建到购买域名，到部署，到上线。其中有一些曲折的过程，最开始不知道如何着手，我去学习Python，通过哪种方式创建了一个简易的博客，但是并不美观，最终还是选择了&lt;code&gt;Hugo&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;博客还有很多不完整以及很多细节不够好的地方，以后我会慢慢调整慢慢学习。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;我将在这里做什么&#34;&gt;我将在这里做什么&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;分享自己的一些编程经验，并与大家交流&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;无聊时在这儿打发时间，记录自己生活中的那些开心与不开心的事儿&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;介绍自己做过的一些项目&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;收集iOS开发的技术文摘&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;记录自己的学习和成长过程&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
